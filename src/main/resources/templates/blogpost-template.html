@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NBA Blog 2020</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../CSS/styles.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>NBA Blog 2020</h1>
+        <a href="/">Home</a>
+      </header>
+      <h2 th:text="${review.make} + ' ' + ${review.model} + ' Review'">
+        Honda Pilot Review
+      </h2>
+      <h3 th:text="'Year: ' + ${review.year}">Year: 2020</h3>
+      <h3 th:text="'Make: ' + ${review.make}">Make: Honda</h3>
+      <h3 th:text="'Model: ' + ${review.model}">Model: Pilot</h3>
+      <p th:text="${review.review}"></p>
+    </div>
+  </body>
+</html>
+  
