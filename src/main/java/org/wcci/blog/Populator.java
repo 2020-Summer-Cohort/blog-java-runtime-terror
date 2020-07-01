@@ -21,7 +21,7 @@ public class Populator implements CommandLineRunner  {
         Category mvpRace = new Category("MVP Race");
         categoryRepo.save(generalDiscussion);
         categoryRepo.save(mvpRace);
-        BlogPost blogPost1 = new BlogPost("Best Team", "Derek Mosher", generalDiscussion, "Cavs are the best team out there right now.");
+        BlogPost blogPost1 = new BlogPost("Best Team- Cleveland Cavs", "Derek Mosher", generalDiscussion, "Cavs are the best team out there right now.");
         BlogPost blogPost2 = new BlogPost("Lebron for MVP", "Brian Windhorst", mvpRace, "Without doubt, LeBron James is the best player in basketball right now. No one else comes close. Giannis just is not at LeBron's level yet.");
 
         blogPostRepo.save(blogPost1);
