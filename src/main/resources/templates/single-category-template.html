@@ -19,9 +19,9 @@
     </header>
     <h2 th:text="${category.name}"></h2>
     <ul th:each="blogPost: ${category.blogPosts}">
-        <li><a th:text="${blogPost.title} + ' ' + 'by' + ' ' + ${blogPost.author} " th:href="@{'/blogPosts/'+ ${blogPost.title}}"></a></li>
+        <li><a th:text="${blogPost.title} + ' ' + 'by' + ' ' + ${blogPost.author.authorName} " th:href="@{'/blogPosts/'+ ${blogPost.title}}"></a></li>
     </ul>
-    <h3>Add a blog post below</h3>
+    
    
 </div>
 </body>

@@ -18,8 +18,20 @@
       </header>
       <h2 th:text="${blogPost.title}">
       </h2>
-      <h3 th:text="'Author: ' + ${blogPost.author}"></h3>
+
+      <h3 th:text="'Author: ' + ${blogPost.author.authorName}"></h3>
+
+      <h3 th:text="'Category: ' + ${blogPost.category.name}"></h3>
+
+      <h3 th:text= "'Published on: ' + ${blogPost.publishTime}"></h3>
+      
+      <h3> Tags </h3> 
+        <ul th:each="tag: ${blogPost.tags}">
+         <li><a th:text="${tag.tagName}" th:href="@{'/tags/'+ ${tag.tagName}}"></a></li>
+        </ul>
+
       <p th:text="${blogPost.postBody}"></p>
+    
     </div>
   </body>
 </html>

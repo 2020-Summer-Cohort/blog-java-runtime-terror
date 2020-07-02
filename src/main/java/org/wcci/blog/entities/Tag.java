@@ -13,7 +13,7 @@ public class Tag {
     @GeneratedValue
     private long id;
     private String tagName;
-    @ManyToMany
+    @ManyToMany (mappedBy = "tags")
     private Collection<BlogPost> blogPosts;
 
     protected Tag() {}

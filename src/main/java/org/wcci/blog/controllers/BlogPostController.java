@@ -14,10 +14,16 @@ public class BlogPostController {
         this.blogPostStorage = blogPostStorage;
     }
 
-    @GetMapping("blogPosts/{blogPostTitle}")
-    public String showSingleBlogPost (@PathVariable String blogPostTitle, Model model) {
-        model.addAttribute("blogPost", blogPostStorage.findBlogPostByTitle(blogPostTitle));
+    @GetMapping("blogPosts/{title}")
+    public String showSingleBlogPost (@PathVariable String title, Model model) {
+        model.addAttribute("blogPost", blogPostStorage.findBlogPostByTitle(title));
         return "single-blogpost-template";
+    }
+
+    @GetMapping ("all-blogposts")
+    public String showAllBlogPosts (Model model) {
+        model.addAttribute("blogPosts", blogPostStorage.findAllBlogPosts());
+        return "all-blogposts-template";
     }
 
 
