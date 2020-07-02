@@ -15,7 +15,18 @@
 <div class="container">
     <header>
         <h1>NBA Blog 2020</h1>
-        <a href="/">Home</a>
+        <div class="links__container">
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li><a href="/" class="header__nav-link">Home</a></li>
+                    <li><a href="/all-authors" class="header__nav-link">Authors</a></li>
+                    <li><a href="/all-categories" class="header__nav-link">Categories</a></li>
+                    <li><a href="/all-tags" class="header__nav-link">Tags</a></li>
+                    <li><a href="/all-blogposts" class="header__nav-link">Blog Posts</a></li>
+    
+                </ul>
+            </nav>
+        </div>
     </header>
     <h2 th:text="${category.name}"></h2>
     <ul th:each="blogPost: ${category.blogPosts}">

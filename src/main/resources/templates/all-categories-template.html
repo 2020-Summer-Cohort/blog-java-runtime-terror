@@ -13,7 +13,22 @@
 </head>
 <body>
 <div class="container">
-    <h1>NBA Blog 2020</h1>
+    <header>
+        <h1>NBA Blog 2020</h1>
+        <div class="links__container">
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li><a href="/" class="header__nav-link">Home</a></li>
+                    <li><a href="/all-authors" class="header__nav-link">Authors</a></li>
+                    <li><a href="/all-categories" class="header__nav-link">Categories</a></li>
+                    <li><a href="/all-tags" class="header__nav-link">Tags</a></li>
+                    <li><a href="/all-blogposts" class="header__nav-link">Blog Posts</a></li>
+    
+                </ul>
+            </nav>
+        </div>
+    </header>
+   
     <h2>Discussion Categories</h2>
     <ul th:each="category: ${categories}">
         <li><a th:text="${category.name}" th:href="@{'/categories/'+${category.name}}"></a></li>
