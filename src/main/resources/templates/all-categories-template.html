@@ -14,11 +14,10 @@
 <body>
 <div class="container">
     <h1>NBA Blog 2020</h1>
-    <h2> <a href="/categories">Categories </a></h2>
+    <h2>Discussion Categories</h2>
     <ul th:each="category: ${categories}">
         <li><a th:text="${category.name}" th:href="@{'/categories/'+${category.name}}"></a></li>
     </ul>
-    <h2> <a href="/hashtags">Hashtags</a></h2>
 </div>
 </body>
 </html>

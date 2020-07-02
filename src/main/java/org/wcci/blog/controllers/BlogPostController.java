@@ -17,7 +17,7 @@ public class BlogPostController {
     @GetMapping("blogPosts/{blogPostTitle}")
     public String showSingleBlogPost (@PathVariable String blogPostTitle, Model model) {
         model.addAttribute("blogPost", blogPostStorage.findBlogPostByTitle(blogPostTitle));
-        return "blogpost-template";
+        return "single-blogpost-template";
     }
 
 
