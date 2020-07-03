@@ -33,6 +33,16 @@
     <ul th:each="category: ${categories}">
         <li><a th:text="${category.name}" th:href="@{'/categories/'+${category.name}}"></a></li>
     </ul>
+
+    <section class="add__box">
+        <h2 class="title2">Add a Category</h2>
+        <form action="categories/add" method="Post" class="box__title">
+          <label for="new-category__category-input"></label>
+          <input type="text" name="categoryName" id="new-category__category-input" />
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+
 </div>
 </body>
 </html>

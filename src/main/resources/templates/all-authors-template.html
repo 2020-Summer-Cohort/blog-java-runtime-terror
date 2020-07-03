@@ -33,6 +33,20 @@
     <ul th:each="author: ${authors}">
         <li><a th:text="${author.authorName}" th:href="@{'/author/'+${author.authorName}}"></a></li>
     </ul>
+
+    <section class="add__box">
+        <h2 class="title2">Add an Author</h2>
+        <form action="authors/add" method="Post" class="box__title">
+          <label for="new-author__author-input"></label>
+          <input
+            type="text"
+            name="authorName"
+            id="new-author__author-input"
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+      
 </div>
 </body>
 </html>

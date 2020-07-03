@@ -4,6 +4,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.wcci.blog.entities.Category;
 import org.wcci.blog.storage.CategoryStorage;
 
 @Controller
@@ -21,5 +23,11 @@ public class CategoryController {
     public String showAllCategories (Model model) {
         model.addAttribute("categories", categoryStorage.findAllCategories());
         return "all-categories-template";
+    }
+
+    @PostMapping("categories/add")
+    public String addCategory (String categoryName) {
+        Category categoryToAdd = new Category(categoryName);
+        categoryStorage
     }
 }

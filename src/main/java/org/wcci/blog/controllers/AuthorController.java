@@ -34,7 +34,7 @@ public class AuthorController {
     public String addAuthor(String authorName) {
         Author authorToAdd = new Author(authorName);
         authorStorage.addAuthor(authorToAdd);
-        return "all-authors-template";
+        return "redirect:/all-authors";
 
     }
 
