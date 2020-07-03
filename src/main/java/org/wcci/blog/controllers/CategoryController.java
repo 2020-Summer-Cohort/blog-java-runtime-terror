@@ -28,6 +28,7 @@ public class CategoryController {
     @PostMapping("categories/add")
     public String addCategory (String categoryName) {
         Category categoryToAdd = new Category(categoryName);
-        categoryStorage
+        categoryStorage.saveNewCategory(categoryToAdd);
+        return "redirect:/all-categories";
     }
 }

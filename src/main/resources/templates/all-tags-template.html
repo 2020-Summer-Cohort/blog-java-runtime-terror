@@ -33,6 +33,15 @@
     <ul th:each="tag: ${tags}">
         <li><a th:text="${tag.tagName}" th:href="@{'/tag/'+${tag.tagName}}"></a></li>
     </ul>
+
+    <section class="add__box">
+        <h2 class="title2">Add a Tag</h2>
+        <form action="tag/add" method="Post" class="box__title">
+            <label for="new-tag__tag-input" class="form_label"></label>
+            <input type="text" name="tagName" id="new-tag__tag-input">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
 </div>
 </body>
 </html>

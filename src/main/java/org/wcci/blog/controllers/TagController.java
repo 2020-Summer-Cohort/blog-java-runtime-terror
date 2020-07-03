@@ -32,6 +32,6 @@ public class TagController {
     public String addTag (String tagName) {
         Tag tagToAdd = new Tag(tagName);
         tagStorage.addTag (tagToAdd);
-        return "all-tags-template";
+        return "redirect:/all-tags";
     }
 }
