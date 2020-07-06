@@ -45,10 +45,10 @@
 
           <select class="form__box1" name="categoryId" id="new-post__post-category-input">
             <option
-              th:each="category:${categories}"
+              th:each="category: ${categories}"
               th:value="${category.id}"
-              th:text="${category.name} "
-            ></option>
+              th:text="${category.name}"
+            > Sample Category </option>
           </select>
 
           <label for="new-post__post-author-input" class="form__label2"
@@ -60,7 +60,7 @@
               th:each="author:${authors}"
               th:value="${author.id}"
               th:text="${author.authorName} "
-            ></option>
+            >Sample Author</option>
           </select>
 
           <label for="new-post__post-title-input" class="form__label4"
@@ -89,7 +89,7 @@
                 th:each="tag: ${tags}"
                 th:value="${tag.id}"
                 th:text="${tag.tagName}"
-              ></option>
+              > Sample Tag </option>
             </select>
         
 

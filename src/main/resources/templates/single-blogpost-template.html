@@ -38,7 +38,7 @@
       
       <h3> Tags </h3> 
         <ul th:each="tag: ${blogPost.tags}">
-         <li><a th:text="${tag.tagName}" th:href="@{'/tags/'+ ${tag.tagName}}"></a></li>
+         <li><a th:text="${tag.tagName}" th:href="@{'/tag/'+ ${tag.tagName}}"></a></li>
         </ul>
 
       <p th:text="${blogPost.postBody}"></p>

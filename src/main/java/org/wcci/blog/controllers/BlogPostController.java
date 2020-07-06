@@ -42,6 +42,9 @@ public class BlogPostController {
     @GetMapping("all-blogposts")
     public String showAllBlogPosts(Model model) {
         model.addAttribute("blogPosts", blogPostStorage.findAllBlogPosts());
+        model.addAttribute("categories", categoryStorage.findAllCategories());
+        model.addAttribute("authors", authorStorage.findAllAuthors());
+        model.addAttribute("tags", tagStorage.findAllTags());
         return "all-blogposts-template";
     }
 
