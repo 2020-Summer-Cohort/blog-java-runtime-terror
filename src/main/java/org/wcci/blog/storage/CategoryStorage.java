@@ -4,6 +4,8 @@ import org.springframework.stereotype.Service;
 import org.wcci.blog.entities.Category;
 import org.wcci.blog.storage.repositories.CategoryRepository;
 
+import java.util.Optional;
+
 @Service
 public class CategoryStorage {
     private CategoryRepository categoryRepo;
@@ -17,5 +19,12 @@ public class CategoryStorage {
 
     public void saveNewCategory (Category categoryToAdd) {
         categoryRepo.save(categoryToAdd);
+    }
+
+    public Category getSingleCategory(Long categoryId) {
+        Optional<Category> categoryOptional = categoryRepo.findById(categoryId);
+        Category foundCategory;
+        foundCategory = categoryOptional.get();
+        return foundCategory;
     }
 }

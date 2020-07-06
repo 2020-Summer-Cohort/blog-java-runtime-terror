@@ -40,14 +40,14 @@
 
       
         <form action="blogPosts/add" method="POST" class="cell4">
-          <label for="new-post__post-genre-input" class="form__label1"
+          <label for="new-post__post-category-input" class="form__label1"
             >Category</label>
 
-          <select class="form__box1" name="genreId" id="new-post__post-genre-input">
+          <select class="form__box1" name="categoryId" id="new-post__post-category-input">
             <option
-              th:each="genre:${genres}"
-              th:value="${genre.id}"
-              th:text="${genre.genreName} "
+              th:each="category:${categories}"
+              th:value="${category.id}"
+              th:text="${category.name} "
             ></option>
           </select>
 
@@ -73,22 +73,22 @@
             <label for="new-post__post-body-input" class="form__label5"
               >Blog Post Body</label
             >
-            <input class="form__box5" name="body" id="new-post__post-body-input"/>          
+            <input class="form__box5" name="postBody" id="new-post__post-body-input"/>          
 
 
           
-            <label for="new-post__post-hashtag-input" class="form__label3"
+            <label for="new-post__post-tag-input" class="form__label3"
               >Tag</label
             >
             <select class="form__box3"
-              name="hashtagIds"
+              name="tagIds"
               multiple
-              id="new-post__post-hashtag-input"
+              id="new-post__post-tag-input"
             >
               <option
-                th:each="hashtag: ${hashtags}"
-                th:value="${hashtag.id}"
-                th:text="${hashtag.tagName}"
+                th:each="tag: ${tags}"
+                th:value="${tag.id}"
+                th:text="${tag.tagName}"
               ></option>
             </select>
         
