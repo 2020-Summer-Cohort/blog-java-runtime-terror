@@ -12,7 +12,16 @@ public class BlogPostStorage {
         this.blogPostRepo = blogPostRepo;
     }
 
-    public BlogPost findBlogPostByTitle(String blogPostTitle) { return blogPostRepo.findByTitle(blogPostTitle);}
-    public Iterable <BlogPost> findAllBlogPosts() { return blogPostRepo.findAll(); }
+    public BlogPost findBlogPostByTitle(String blogPostTitle) {
+        return blogPostRepo.findByTitle(blogPostTitle);
+    }
+
+    public Iterable<BlogPost> findAllBlogPosts() {
+        return blogPostRepo.findAll();
+    }
+
+    public void saveNewBlogPost(BlogPost blogPostToSave) {
+        blogPostRepo.save(blogPostToSave);
+    }
 
 }
