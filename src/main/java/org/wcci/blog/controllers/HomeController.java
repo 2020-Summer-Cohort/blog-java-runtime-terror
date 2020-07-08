@@ -15,8 +15,8 @@ public class HomeController {
     }
 
     @RequestMapping("")
-    public String showAllCategories (Model model) {
-        model.addAttribute( "categories", categoryStorage.findAllCategories());
+    public String showAllCategories(Model model) {
+        model.addAttribute("categories", categoryStorage.findAllCategories());
         return "home-template";
     }
 }

@@ -1,100 +1,127 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NBA Blog 2020</title>
     <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@600&display=swap"
-            rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@600&display=swap"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" href="../static/CSS/styles.css" type="text/css"/>
-</head>
-<body>
-<div class="container">
-    <header>
+    <link rel="stylesheet" href="/CSS/styles.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
         <h1>NBA Blog 2020</h1>
         <div class="links__container">
-            <nav class="header__nav">
-                <ul class="header__nav-list">
-                    <li><a href="/" class="header__nav-link">Home</a></li>
-                    <li><a href="/all-authors" class="header__nav-link">Authors</a></li>
-                    <li><a href="/all-categories" class="header__nav-link">Categories</a></li>
-                    <li><a href="/all-tags" class="header__nav-link">Tags</a></li>
-                    <li><a href="/all-blogposts" class="header__nav-link">Blog Posts</a></li>
-    
-                </ul>
-            </nav>
+          <nav class="header__nav">
+            <ul class="header__nav-list">
+              <li><a href="/" class="header__nav-link">Home</a></li>
+              <li>
+                <a href="/all-authors" class="header__nav-link">Authors</a>
+              </li>
+              <li>
+                <a href="/all-categories" class="header__nav-link"
+                  >Categories</a
+                >
+              </li>
+              <li><a href="/all-tags" class="header__nav-link">Tags</a></li>
+              <li>
+                <a href="/all-blogposts" class="header__nav-link">Blog Posts</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-    </header>
-   
-    <h2>All Blog Posts</h2>
-    <ul th:each="blogPost: ${blogPosts}">
-        <li><a th:text="${blogPost.title}" th:href="@{'/blogPosts/'+${blogPost.title}}"></a></li>
-    </ul>
+      </header>
 
-    <div class="cell3">
+      <h2>All Blog Posts</h2>
+      <ul th:each="blogPost: ${blogPosts}">
+        <li>
+          <a
+            th:text="${blogPost.title}"
+            th:href="@{'/blogPosts/'+${blogPost.title}}"
+          ></a>
+        </li>
+      </ul>
+
+      <div class="cell3">
         <h1 class="header__title2">Add a Post:</h1>
-    </div>
+      </div>
 
-      
-        <form action="blogPosts/add" method="POST" class="cell4">
-          <label for="new-post__post-category-input" class="form__label1"
-            >Category</label>
+      <form action="blogPosts/add" method="POST" class="cell4">
+        <label for="new-post__post-category-input" class="form__label1"
+          >Category</label
+        >
 
-          <select class="form__box1" name="categoryId" id="new-post__post-category-input">
-            <option
-              th:each="category: ${categories}"
-              th:value="${category.id}"
-              th:text="${category.name}"
-            > Sample Category </option>
-          </select>
-
-          <label for="new-post__post-author-input" class="form__label2"
-            >Author</label
+        <select
+          class="form__box1"
+          name="categoryId"
+          id="new-post__post-category-input"
+        >
+          <option
+            th:each="category: ${categories}"
+            th:value="${category.id}"
+            th:text="${category.name}"
           >
+            Sample Category
+          </option>
+        </select>
 
-          <select class="form__box2" name="authorId" id="new-post__post-author-input">
-            <option
-              th:each="author:${authors}"
-              th:value="${author.id}"
-              th:text="${author.authorName} "
-            >Sample Author</option>
-          </select>
+        <label for="new-post__post-author-input" class="form__label2"
+          >Author</label
+        >
 
-          <label for="new-post__post-title-input" class="form__label4"
-              >Title</label
-            >
-            <input class="form__box4" type="text" name="title" id="new-post__post-title-input" />
-          
+        <select
+          class="form__box2"
+          name="authorId"
+          id="new-post__post-author-input"
+        >
+          <option
+            th:each="author:${authors}"
+            th:value="${author.id}"
+            th:text="${author.authorName} "
+            >Sample Author</option
+          >
+        </select>
 
-          
-            <label for="new-post__post-body-input" class="form__label5"
-              >Blog Post Body</label
-            >
-            <input class="form__box5" name="postBody" id="new-post__post-body-input"/>          
+        <label for="new-post__post-title-input" class="form__label4"
+          >Title</label
+        >
+        <input
+          class="form__box4"
+          type="text"
+          name="title"
+          id="new-post__post-title-input"
+        />
 
+        <label for="new-post__post-body-input" class="form__label5"
+          >Blog Post Body</label
+        >
+        <input
+          class="form__box5"
+          name="postBody"
+          id="new-post__post-body-input"
+        />
 
-          
-            <label for="new-post__post-tag-input" class="form__label3"
-              >Tag</label
-            >
-            <select class="form__box3"
-              name="tagIds"
-              multiple
-              id="new-post__post-tag-input"
-            >
-              <option
-                th:each="tag: ${tags}"
-                th:value="${tag.id}"
-                th:text="${tag.tagName}"
-              > Sample Tag </option>
-            </select>
-        
+        <label for="new-post__post-tag-input" class="form__label3">Tag</label>
+        <select
+          class="form__box3"
+          name="tagIds"
+          multiple
+          id="new-post__post-tag-input"
+        >
+          <option
+            th:each="tag: ${tags}"
+            th:value="${tag.id}"
+            th:text="${tag.tagName}"
+          >
+            Sample Tag
+          </option>
+        </select>
 
-          <button class="button1" type="submit">Submit</button>
-        </form>
-</div>
-</body>
+        <button class="button1" type="submit">Submit</button>
+      </form>
+    </div>
+  </body>
 </html>

@@ -13,10 +13,11 @@ public class Tag {
     @GeneratedValue
     private long id;
     private String tagName;
-    @ManyToMany (mappedBy = "tags")
+    @ManyToMany(mappedBy = "tags")
     private Collection<BlogPost> blogPosts;
 
-    protected Tag() {}
+    protected Tag() {
+    }
 
     public Tag(String tagName) {
         this.tagName = tagName;

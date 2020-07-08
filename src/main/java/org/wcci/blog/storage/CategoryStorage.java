@@ -14,10 +14,15 @@ public class CategoryStorage {
         this.categoryRepo = categoryRepo;
     }
 
-    public Category findCategoryByName (String categoryName) { return categoryRepo.findByName(categoryName);}
-    public Iterable<Category> findAllCategories() { return categoryRepo.findAll();}
+    public Category findCategoryByName(String categoryName) {
+        return categoryRepo.findByName(categoryName);
+    }
 
-    public void saveNewCategory (Category categoryToAdd) {
+    public Iterable<Category> findAllCategories() {
+        return categoryRepo.findAll();
+    }
+
+    public void saveNewCategory(Category categoryToAdd) {
         categoryRepo.save(categoryToAdd);
     }
 

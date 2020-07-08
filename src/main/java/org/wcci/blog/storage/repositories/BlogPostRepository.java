@@ -5,5 +5,5 @@ import org.wcci.blog.entities.BlogPost;
 
 public interface BlogPostRepository extends CrudRepository<BlogPost, Long> {
 
-    BlogPost findByTitle (String blogPostTitle);
+    BlogPost findByTitle(String blogPostTitle);
 }

@@ -8,7 +8,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../static/CSS/styles.css" type="text/css" />
+    <link rel="stylesheet" href="/CSS/styles.css" type="text/css" />
   </head>
   <body>
     <div class="container">
@@ -16,34 +16,40 @@
         <h1>NBA Blog 2020</h1>
         <div class="links__container">
           <nav class="header__nav">
-              <ul class="header__nav-list">
-                  <li><a href="/" class="header__nav-link">Home</a></li>
-                  <li><a href="/all-authors" class="header__nav-link">Authors</a></li>
-                  <li><a href="/all-categories" class="header__nav-link">Categories</a></li>
-                  <li><a href="/all-tags" class="header__nav-link">Tags</a></li>
-                  <li><a href="/all-blogposts" class="header__nav-link">Blog Posts</a></li>
-  
-              </ul>
+            <ul class="header__nav-list">
+              <li><a href="/" class="header__nav-link">Home</a></li>
+              <li>
+                <a href="/all-authors" class="header__nav-link">Authors</a>
+              </li>
+              <li>
+                <a href="/all-categories" class="header__nav-link"
+                  >Categories</a
+                >
+              </li>
+              <li><a href="/all-tags" class="header__nav-link">Tags</a></li>
+              <li>
+                <a href="/all-blogposts" class="header__nav-link">Blog Posts</a>
+              </li>
+            </ul>
           </nav>
-      </div>
+        </div>
       </header>
-      <h2 th:text="${blogPost.title}">
-      </h2>
+      <h2 th:text="${blogPost.title}"></h2>
 
       <h3 th:text="'Author: ' + ${blogPost.author.authorName}"></h3>
 
       <h3 th:text="'Category: ' + ${blogPost.category.name}"></h3>
 
-      <h3 th:text= "'Published on: ' + ${blogPost.publishTime}"></h3>
-      
-      <h3> Tags </h3> 
-        <ul th:each="tag: ${blogPost.tags}">
-         <li><a th:text="${tag.tagName}" th:href="@{'/tag/'+ ${tag.tagName}}"></a></li>
-        </ul>
+      <h3 th:text="'Published on: ' + ${blogPost.publishTime}"></h3>
+
+      <h3>Tags</h3>
+      <ul th:each="tag: ${blogPost.tags}">
+        <li>
+          <a th:text="${tag.tagName}" th:href="@{'/tag/'+ ${tag.tagName}}"></a>
+        </li>
+      </ul>
 
       <p th:text="${blogPost.postBody}"></p>
-    
     </div>
   </body>
 </html>
-  

@@ -1,38 +1,48 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NBA Blog 2020</title>
     <link
-            href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@600&display=swap"
-            rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@600&display=swap"
+      rel="stylesheet"
     />
-    <link rel="stylesheet" href="../static/CSS/styles.css" type="text/css"/>
-</head>
-<body>
-<div class="container">
-    <header>
+    <link rel="stylesheet" href="/CSS/styles.css" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
         <h1>NBA Blog 2020</h1>
         <div class="links__container">
-            <nav class="header__nav">
-                <ul class="header__nav-list">
-                    <li><a href="/" class="header__nav-link">Home</a></li>
-                    <li><a href="/all-authors" class="header__nav-link">Authors</a></li>
-                    <li><a href="/all-categories" class="header__nav-link">Categories</a></li>
-                    <li><a href="/all-tags" class="header__nav-link">Tags</a></li>
-                    <li><a href="/all-blogposts" class="header__nav-link">Blog Posts</a></li>
-    
-                </ul>
-            </nav>
+          <nav class="header__nav">
+            <ul class="header__nav-list">
+              <li><a href="/" class="header__nav-link">Home</a></li>
+              <li>
+                <a href="/all-authors" class="header__nav-link">Authors</a>
+              </li>
+              <li>
+                <a href="/all-categories" class="header__nav-link"
+                  >Categories</a
+                >
+              </li>
+              <li><a href="/all-tags" class="header__nav-link">Tags</a></li>
+              <li>
+                <a href="/all-blogposts" class="header__nav-link">Blog Posts</a>
+              </li>
+            </ul>
+          </nav>
         </div>
-    </header>
-    <h2 th:text= " 'Tag: ' + ${tag.tagName}"></h2>
-    <ul th:each="blogPost: ${tag.blogPosts}">
-        <li><a th:text="${blogPost.title}" th:href="@{'/blogPosts/'+ ${blogPost.title}}"></a></li>
-    </ul>
-    
-</div>
-</body>
+      </header>
+      <h2 th:text=" 'Tag: ' + ${tag.tagName}"></h2>
+      <ul th:each="blogPost: ${tag.blogPosts}">
+        <li>
+          <a
+            th:text="${blogPost.title}"
+            th:href="@{'/blogPosts/'+ ${blogPost.title}}"
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </body>
 </html>

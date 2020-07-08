@@ -16,22 +16,22 @@ public class TagController {
         this.tagStorage = tagStorage;
     }
 
-    @GetMapping ("all-tags")
-    public String showAllTags (Model model) {
+    @GetMapping("all-tags")
+    public String showAllTags(Model model) {
         model.addAttribute("tags", tagStorage.findAllTags());
         return "all-tags-template";
     }
 
-    @GetMapping ("tag/{tagName}")
-    public String showSingleTag (@PathVariable String tagName, Model model ) {
+    @GetMapping("tag/{tagName}")
+    public String showSingleTag(@PathVariable String tagName, Model model) {
         model.addAttribute("tag", tagStorage.findTagByTagName(tagName));
         return "single-tag-template";
     }
 
-    @PostMapping ("tag/add")
-    public String addTag (String tagName) {
+    @PostMapping("tag/add")
+    public String addTag(String tagName) {
         Tag tagToAdd = new Tag(tagName);
-        tagStorage.addTag (tagToAdd);
+        tagStorage.addTag(tagToAdd);
         return "redirect:/all-tags";
     }
 }

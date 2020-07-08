@@ -15,11 +15,17 @@ public class AuthorStorage {
         this.authorRepo = authorRepo;
     }
 
-    public Iterable<Author> findAllAuthors() { return authorRepo.findAll();}
+    public Iterable<Author> findAllAuthors() {
+        return authorRepo.findAll();
+    }
 
-    public Author findAuthorByAuthorName (String authorName) {return authorRepo.findByAuthorName(authorName);}
+    public Author findAuthorByAuthorName(String authorName) {
+        return authorRepo.findByAuthorName(authorName);
+    }
 
-    public void addAuthor (Author authorToAdd) {authorRepo.save(authorToAdd);}
+    public void addAuthor(Author authorToAdd) {
+        authorRepo.save(authorToAdd);
+    }
 
     public Author getSingleAuthor(Long authorId) {
         Optional<Author> authorOptional = authorRepo.findById(authorId);

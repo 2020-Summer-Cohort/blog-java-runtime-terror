@@ -14,11 +14,17 @@ public class TagStorage {
         this.tagRepo = tagRepo;
     }
 
-    public Iterable<Tag> findAllTags() { return tagRepo.findAll();}
+    public Iterable<Tag> findAllTags() {
+        return tagRepo.findAll();
+    }
 
-    public Tag findTagByTagName (String tagName) {return tagRepo.findByTagName(tagName);}
+    public Tag findTagByTagName(String tagName) {
+        return tagRepo.findByTagName(tagName);
+    }
 
-    public void addTag (Tag tagToAdd) {tagRepo.save(tagToAdd);}
+    public void addTag(Tag tagToAdd) {
+        tagRepo.save(tagToAdd);
+    }
 
     public Tag getSingleTag(Long singleTagId) {
         Optional<Tag> tagOptional = tagRepo.findById(singleTagId);
