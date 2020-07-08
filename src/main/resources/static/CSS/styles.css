@@ -1,0 +1,76 @@
+/* colors
+#17408B - blue
+#ffffff - white
+#C9082A - red
+#D3D3D3 - light gray
+*/
+
+
+
+
+* {
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    
+    margin: 0 auto;
+    max-width: 1000px;
+    background-color:#D3D3D3;
+    
+    
+}
+
+header {
+    
+}
+
+h1 {
+    text-align: center;
+    font-size: 50px;
+}
+
+.links__container {
+    text-align: center;
+    
+
+}
+
+.header__nav-list a {
+    font-size: large;
+    background-color: #17408B ;
+    width: 20%;
+    float: left;
+    
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+
+}
+
+.header__nav-list a:hover {
+    background-color: #ffffff;
+    color: #17408B  ;
+}
+
+.header__nav-list {
+    list-style: none;
+}
+
+h2 a {
+    font-size: x-large;
+    border-style: solid;
+    border-color: #C9082A;
+    width: 50%;
+    height: 300px ;
+    text-align: center;
+    float: left;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+    
+
+}
